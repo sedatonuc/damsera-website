@@ -28,7 +28,7 @@ const features = [
     title: "Budgets",
     description:
       "Create monthly budgets, monitor limits and understand where your money is going before it is too late.",
-    icon: Landmark, 
+    icon: Landmark,
   },
   {
     title: "Calendar Planning",
