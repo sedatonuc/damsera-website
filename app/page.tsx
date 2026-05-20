@@ -6,6 +6,8 @@ import AmbientBackground from "./components/AmbientBackground";
 import TrustBar from "./components/TrustBar";
 import AppShowcase from "./components/AppShowcase";
 import DashboardPreview from "./components/DashboardPreview";
+import CashFlowPreview from "./components/CashFlowPreview";
+import ReportsPreview from "./components/ReportsPreview";
 import FAQ from "./components/FAQ";
 import Features from "./components/Features";
 import Footer from "./components/Footer";
@@ -48,7 +50,11 @@ export default function Home() {
 
       <DashboardPreview />
 
+      <CashFlowPreview />
+
       <Security />
+
+      <ReportsPreview />
 
       <Pricing />
 
