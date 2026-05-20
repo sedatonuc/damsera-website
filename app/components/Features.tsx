@@ -90,19 +90,19 @@ export default function Features() {
 
             return (
               <Reveal key={feature.title} delay={index * 0.04}>
-                <div className="group h-full rounded-[2rem] border border-black/5 bg-white/70 p-8 text-center shadow-[0_20px_60px_rgba(31,36,40,0.06)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_30px_80px_rgba(31,36,40,0.1)]">
-                  <div className="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-3xl bg-[#f0f1f3] transition duration-300 group-hover:bg-[#e8ebee]">
+                <div className="group flex h-full min-h-[360px] flex-col items-center rounded-[2rem] border border-black/5 bg-white/70 p-8 text-center shadow-[0_20px_60px_rgba(31,36,40,0.06)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_30px_80px_rgba(31,36,40,0.1)]">
+                  <div className="mb-8 flex h-16 w-16 shrink-0 items-center justify-center rounded-3xl bg-[#f0f1f3] transition duration-300 group-hover:bg-[#e8ebee]">
                     <Icon
-                      className="h-7 w-7 text-[#111827]"
+                      className="block h-6 w-6 shrink-0 text-[#111827]"
                       strokeWidth={2.2}
                     />
                   </div>
 
-                  <h3 className="min-h-[64px] text-2xl font-semibold tracking-[-0.03em] text-[#111827]">
+                  <h3 className="flex min-h-[68px] items-center justify-center text-2xl font-semibold tracking-[-0.03em] text-[#111827]">
                     {feature.title}
                   </h3>
 
-                 <p className="mt-5 text-base leading-7 text-[#5f6b73]">
+                  <p className="mt-4 min-h-[112px] text-base leading-7 text-[#5f6b73]">
                     {feature.description}
                   </p>
                 </div>

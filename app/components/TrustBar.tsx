@@ -1,25 +1,10 @@
-import { Cloud, LayoutGrid, ShieldCheck } from "lucide-react";
-
-function AppleLogo() {
-  return (
-    <span
-      className="text-[28px] leading-none text-[#111827]"
-      style={{
-        fontFamily:
-          "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif",
-      }}
-      aria-hidden="true"
-    >
-      
-    </span>
-  );
-}
+import { Cloud, LayoutGrid, ShieldCheck, Smartphone } from "lucide-react";
 
 const items = [
   {
     title: "Built for Apple",
     description: "Native experience across iPhone, iPad and Mac.",
-    icon: AppleLogo,
+    icon: Smartphone,
   },
   {
     title: "Private by design",
@@ -49,17 +34,20 @@ export default function TrustBar() {
             return (
               <div
                 key={item.title}
-                className="group rounded-[1.5rem] border border-black/5 bg-white/75 p-5 transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_18px_50px_rgba(31,36,40,0.08)]"
+                className="group flex min-h-[210px] flex-col items-center justify-center rounded-[1.5rem] border border-black/5 bg-white/75 p-7 text-center transition duration-300 hover:bg-white hover:shadow-[0_18px_50px_rgba(31,36,40,0.06)]"
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f0f1f3] transition duration-300 group-hover:bg-[#e8ebee]">
-                  <Icon className="h-[18px] w-[18px] shrink-0 text-[#111827]" strokeWidth={2.2}/>
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f0f1f3]">
+                  <Icon
+                    className="block h-6 w-6 shrink-0 text-[#111827]"
+                    strokeWidth={2.2}
+                  />
                 </div>
 
-                <h3 className="text-base font-semibold tracking-[-0.02em] text-[#111827]">
+                <h3 className="text-lg font-semibold tracking-[-0.03em] text-[#111827]">
                   {item.title}
                 </h3>
 
-                <p className="mt-2 text-sm leading-6 text-[#5f6b73]">
+                <p className="mt-3 text-sm leading-6 text-[#5f6b73]">
                   {item.description}
                 </p>
               </div>
