@@ -5,15 +5,15 @@ import Logo from "./Logo";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.96),rgba(245,246,247,1))] px-6 py-10">
+    <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.96),rgba(245,246,247,1))] px-6 py-10">
       <div className="pointer-events-none absolute left-1/2 top-24 h-72 w-72 -translate-x-1/2 rounded-full bg-white/80 blur-3xl" />
       <div className="pointer-events-none absolute right-0 top-1/3 h-96 w-96 rounded-full bg-[#dfe3e6]/60 blur-3xl" />
 
       <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 lg:grid-cols-2">
         <motion.div
-          initial={{ opacity: 0, y: 28, filter: "blur(10px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-[28px] bg-white shadow-xl">
             <Logo className="h-14 w-14 text-[#1f2428]" />
@@ -48,18 +48,15 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-  initial={{ opacity: 0, scale: 0.92, y: 40 }}
-  animate={{
-    opacity: 1,
-    scale: 1,
-    y: 0,
-  }}
-  transition={{
-    duration: 1,
-    ease: [0.22, 1, 0.36, 1],
-  }}
-  className="relative"
->
+          initial={{ opacity: 0, scale: 0.96, y: 24 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1],
+            delay: 0.08,
+          }}
+          className="relative"
+        >
           <div className="absolute inset-0 rounded-full bg-[#dfe3e6] opacity-70 blur-3xl" />
 
           <div className="relative mx-auto max-w-sm rounded-[44px] bg-[#1f2428] p-3 shadow-2xl transition duration-500 hover:-translate-y-2 hover:shadow-[0_40px_120px_rgba(0,0,0,0.18)]">
