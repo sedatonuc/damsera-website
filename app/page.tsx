@@ -2,6 +2,9 @@
 
 import { useEffect } from "react";
 
+import AmbientBackground from "./components/AmbientBackground";
+import TrustBar from "./components/TrustBar";
+import AppShowcase from "./components/AppShowcase";
 import FAQ from "./components/FAQ";
 import Features from "./components/Features";
 import Footer from "./components/Footer";
@@ -14,26 +17,40 @@ import Security from "./components/Security";
 
 export default function Home() {
   useEffect(() => {
-  if ("scrollRestoration" in history) {
-    history.scrollRestoration = "manual";
-  }
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
 
-  window.scrollTo({
-    top: 0,
-    behavior: "instant",
-  });
-}, []);
+    window.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
+  }, []);
 
   return (
-    <main className="min-h-screen bg-[#f5f6f7] text-[#1f2428]">
+    <main className="relative min-h-screen overflow-hidden bg-[#f5f6f7] text-[#1f2428]">
+      <AmbientBackground />
+
       <IntroLoader />
+
       <Navbar />
+
       <Hero />
+
+      <TrustBar />
+
+      <AppShowcase />
+
       <Features />
+
       <Modules />
+
       <Security />
+
       <Pricing />
+
       <FAQ />
+
       <Footer />
     </main>
   );
