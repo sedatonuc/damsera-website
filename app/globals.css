@@ -38,3 +38,8 @@ html {
 body {
   background: #f5f6f7;
 }
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
