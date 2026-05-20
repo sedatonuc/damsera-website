@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Logo from "./Logo";
 
 export default function Navbar() {
   return (
     <header className="fixed left-0 top-0 z-50 w-full px-6 py-5">
       <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/70 bg-white/75 px-5 py-3 shadow-sm backdrop-blur-xl">
         <a href="#" className="flex items-center gap-3">
-          <Image src="/logo.png" alt="Damsera Logo" width={32} height={32} />
+          <Logo className="h-7 w-7 text-[#1f2428]" />
 
           <span className="text-sm font-semibold tracking-tight text-[#1f2428]">
             Damsera

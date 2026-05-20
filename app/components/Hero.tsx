@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Logo from "./Logo";
 
 export default function Hero() {
   return (
@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="mx-auto grid w-full max-w-7xl items-center gap-14 lg:grid-cols-2">
         <div>
           <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-[28px] bg-white shadow-xl">
-            <Image src="/logo.png" alt="Damsera Logo" width={56} height={56} priority />
+            <Logo className="h-14 w-14 text-[#1f2428]" />
           </div>
 
           <p className="mb-5 text-sm font-semibold uppercase tracking-[0.25em] text-[#697077]">
