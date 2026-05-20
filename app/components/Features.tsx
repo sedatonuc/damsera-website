@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 const features = [
   {
     title: "Smart Dashboard",
@@ -35,7 +37,7 @@ export default function Features() {
   return (
     <section id="features" className="px-6 py-28">
       <div className="mx-auto max-w-7xl">
-        <div className="max-w-3xl">
+        <Reveal className="max-w-3xl">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#697077]">
             Core Features
           </p>
@@ -48,26 +50,25 @@ export default function Features() {
             Damsera combines daily money tracking, long-term planning and
             advanced reporting in a single modular finance system.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
-            <div
-              key={feature.title}
-              className="rounded-[32px] border border-[#e3e6e8] bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
-            >
-              <div className="mb-8 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#f0f2f3]">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#1f2428]" />
+          {features.map((feature, index) => (
+            <Reveal key={feature.title} delay={index * 0.08}>
+              <div className="h-full rounded-[32px] border border-[#e3e6e8] bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div className="mb-8 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#f0f2f3]">
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#1f2428]" />
+                </div>
+
+                <h3 className="text-xl font-semibold tracking-tight text-[#1f2428]">
+                  {feature.title}
+                </h3>
+
+                <p className="mt-3 leading-7 text-[#5f6b73]">
+                  {feature.description}
+                </p>
               </div>
-
-              <h3 className="text-xl font-semibold tracking-tight text-[#1f2428]">
-                {feature.title}
-              </h3>
-
-              <p className="mt-3 leading-7 text-[#5f6b73]">
-                {feature.description}
-              </p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
