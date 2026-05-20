@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect } from "react";
+
 import FAQ from "./components/FAQ";
 import Features from "./components/Features";
 import Footer from "./components/Footer";
@@ -9,6 +13,10 @@ import Pricing from "./components/Pricing";
 import Security from "./components/Security";
 
 export default function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main className="min-h-screen bg-[#f5f6f7] text-[#1f2428]">
       <IntroLoader />
