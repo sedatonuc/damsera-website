@@ -98,11 +98,11 @@ export default function Features() {
                     />
                   </div>
 
-                  <h3 className="text-2xl font-semibold tracking-[-0.03em] text-[#111827]">
+                  <h3 className="min-h-[64px] text-2xl font-semibold tracking-[-0.03em] text-[#111827]">
                     {feature.title}
                   </h3>
 
-                  <p className="mt-5 text-base leading-7 text-[#5f6b73]">
+                 <p className="mt-5 text-base leading-7 text-[#5f6b73]">
                     {feature.description}
                   </p>
                 </div>

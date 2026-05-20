@@ -52,7 +52,7 @@ export default function TrustBar() {
                 className="group rounded-[1.5rem] border border-black/5 bg-white/75 p-5 transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_18px_50px_rgba(31,36,40,0.08)]"
               >
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f0f1f3] transition duration-300 group-hover:bg-[#e8ebee]">
-                  <Icon className="h-5 w-5 text-[#111827]" />
+                  <Icon className="h-[18px] w-[18px] shrink-0 text-[#111827]" strokeWidth={2.2}/>
                 </div>
 
                 <h3 className="text-base font-semibold tracking-[-0.02em] text-[#111827]">
