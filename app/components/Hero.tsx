@@ -1,10 +1,20 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Logo from "./Logo";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden px-6 py-10">
-      <div className="mx-auto grid w-full max-w-7xl items-center gap-14 lg:grid-cols-2">
-        <div>
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.96),rgba(245,246,247,1))] px-6 py-10">
+      <div className="pointer-events-none absolute left-1/2 top-24 h-72 w-72 -translate-x-1/2 rounded-full bg-white/80 blur-3xl" />
+      <div className="pointer-events-none absolute right-0 top-1/3 h-96 w-96 rounded-full bg-[#dfe3e6]/60 blur-3xl" />
+
+      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 lg:grid-cols-2">
+        <motion.div
+          initial={{ opacity: 0, y: 28, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-[28px] bg-white shadow-xl">
             <Logo className="h-14 w-14 text-[#1f2428]" />
           </div>
@@ -35,12 +45,25 @@ export default function Hero() {
               Explore Features
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="relative">
-          <div className="absolute inset-0 rounded-full bg-[#dfe3e6] blur-3xl" />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92, y: 40 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: [0, -10, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="relative"
+        >
+          <div className="absolute inset-0 rounded-full bg-[#dfe3e6] opacity-70 blur-3xl" />
 
-          <div className="relative mx-auto max-w-sm rounded-[44px] bg-[#1f2428] p-3 shadow-2xl">
+          <div className="relative mx-auto max-w-sm rounded-[44px] bg-[#1f2428] p-3 shadow-2xl transition duration-500 hover:-translate-y-2 hover:shadow-[0_40px_120px_rgba(0,0,0,0.18)]">
             <div className="rounded-[36px] bg-[#f5f6f7] p-5">
               <div className="mx-auto mb-5 h-1.5 w-20 rounded-full bg-[#c7ccd1]" />
 
@@ -62,7 +85,10 @@ export default function Hero() {
                   ["Savings", "₺15,000"],
                   ["Debt", "₺9,700"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-3xl bg-white p-4 shadow-sm">
+                  <div
+                    key={label}
+                    className="rounded-3xl bg-white p-4 shadow-sm"
+                  >
                     <p className="text-xs text-[#697077]">{label}</p>
                     <p className="mt-2 text-lg font-semibold">{value}</p>
                   </div>
@@ -96,7 +122,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
