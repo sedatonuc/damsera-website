@@ -1,10 +1,12 @@
 import {
-  Wallet,
   ArrowLeftRight,
-  PiggyBank,
   CalendarDays,
+  ChartNoAxesCombined,
   FileText,
   LaptopMinimal,
+  LayoutDashboard,
+  Landmark,
+  ShieldCheck,
 } from "lucide-react";
 
 import Reveal from "./Reveal";
@@ -13,8 +15,8 @@ const features = [
   {
     title: "Smart Dashboard",
     description:
-      "See income, expenses, savings, debt and your monthly progress from one clean financial command center.",
-    icon: Wallet,
+      "See income, expenses, savings, debt and monthly progress from one clean financial command center.",
+    icon: LayoutDashboard,
   },
   {
     title: "Transactions",
@@ -26,13 +28,19 @@ const features = [
     title: "Budgets",
     description:
       "Create monthly budgets, monitor limits and understand where your money is going before it is too late.",
-    icon: PiggyBank,
+    icon: Landmark, 
   },
   {
     title: "Calendar Planning",
     description:
-      "Track upcoming bills, installments, subscriptions and payment dates directly inside a financial calendar.",
+      "Track upcoming bills, installments, subscriptions and payment dates inside a financial calendar.",
     icon: CalendarDays,
+  },
+  {
+    title: "Cashflow Intelligence",
+    description:
+      "Visualize how your income moves across expenses, savings, debts and long-term goals.",
+    icon: ChartNoAxesCombined,
   },
   {
     title: "Reports",
@@ -45,6 +53,12 @@ const features = [
     description:
       "Designed for iPhone, iPad and Mac with a native, premium and privacy-first experience.",
     icon: LaptopMinimal,
+  },
+  {
+    title: "Private by Design",
+    description:
+      "Your financial workspace is built around security, privacy and local-first data control.",
+    icon: ShieldCheck,
   },
 ];
 
@@ -65,21 +79,21 @@ export default function Features() {
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-[#5f6b73]">
-            Damsera combines daily money tracking, long-term planning and
-            advanced reporting in a single modular finance system.
+            Damsera combines daily money tracking, long-term planning, cashflow
+            intelligence and advanced reporting in one modular finance system.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {features.map((feature, index) => {
             const Icon = feature.icon;
 
             return (
-              <Reveal key={feature.title} delay={index * 0.05}>
-                <div className="group h-full rounded-[2rem] border border-black/5 bg-white/65 p-8 shadow-[0_20px_60px_rgba(31,36,40,0.06)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_80px_rgba(31,36,40,0.1)]">
-                  <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-3xl bg-[#f3f4f6] transition duration-300 group-hover:bg-[#ebeef0]">
+              <Reveal key={feature.title} delay={index * 0.04}>
+                <div className="group h-full rounded-[2rem] border border-black/5 bg-white/70 p-8 text-center shadow-[0_20px_60px_rgba(31,36,40,0.06)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_30px_80px_rgba(31,36,40,0.1)]">
+                  <div className="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-3xl bg-[#f0f1f3] transition duration-300 group-hover:bg-[#e8ebee]">
                     <Icon
-                      className="h-7 w-7 text-[#1f2428]"
+                      className="h-7 w-7 text-[#111827]"
                       strokeWidth={2.2}
                     />
                   </div>
@@ -88,7 +102,7 @@ export default function Features() {
                     {feature.title}
                   </h3>
 
-                  <p className="mt-5 text-lg leading-8 text-[#5f6b73]">
+                  <p className="mt-5 text-base leading-7 text-[#5f6b73]">
                     {feature.description}
                   </p>
                 </div>
