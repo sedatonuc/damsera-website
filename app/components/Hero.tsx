@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Logo from "./Logo";
 
@@ -9,7 +10,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute left-1/2 top-24 h-72 w-72 -translate-x-1/2 rounded-full bg-white/80 blur-3xl" />
       <div className="pointer-events-none absolute right-0 top-1/3 h-96 w-96 rounded-full bg-[#dfe3e6]/60 blur-3xl" />
 
-      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 lg:grid-cols-2">
+      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 lg:grid-cols-[0.85fr_1.15fr]">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -30,12 +31,15 @@ export default function Hero() {
           <p className="mt-7 max-w-xl text-lg leading-8 text-[#5f6b73]">
             Damsera helps you manage transactions, budgets, accounts, credit
             cards, subscriptions, loans, reports and your financial calendar
-            across iPhone, iPad and Mac.
+            across iPhone and Mac.
           </p>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <a className="rounded-full bg-[#1f2428] px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-black">
-              Coming Soon
+            <a
+              href="#pricing"
+              className="rounded-full bg-[#1f2428] px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-black cursor-pointer"
+            >
+              Download
             </a>
 
             <a
@@ -55,69 +59,25 @@ export default function Hero() {
             ease: [0.22, 1, 0.36, 1],
             delay: 0.08,
           }}
-          className="relative"
+          className="relative flex min-h-[560px] items-center justify-center"
         >
-          <div className="absolute inset-0 rounded-full bg-[#dfe3e6] opacity-70 blur-3xl" />
+          <div className="absolute left-1/2 top-1/2 h-[24rem] w-[24rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#dfe3e6]/45 blur-[90px]" />
+          <div className="absolute right-12 top-20 h-44 w-44 rounded-full bg-white/70 blur-[80px]" />
 
-          <div className="relative mx-auto max-w-sm rounded-[44px] bg-[#1f2428] p-3 shadow-2xl transition duration-500 hover:-translate-y-2 hover:shadow-[0_40px_120px_rgba(0,0,0,0.18)]">
-            <div className="rounded-[36px] bg-[#f5f6f7] p-5">
-              <div className="mx-auto mb-5 h-1.5 w-20 rounded-full bg-[#c7ccd1]" />
+          {/* MacBook */}
+          <div className="relative z-20 w-full max-w-[920px]">
+            <div className="absolute left-1/2 top-1/2 h-[18rem] w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#dfe3e6]/25 blur-[120px]" />
 
-              <div className="mb-6 flex items-center justify-between">
-                <div>
-                  <p className="text-xs text-[#697077]">Total Balance</p>
-                  <h2 className="mt-1 text-3xl font-semibold">₺128,450</h2>
-                </div>
-
-                <div className="rounded-full bg-[#e8f3ee] px-3 py-1 text-xs font-semibold text-[#0f7a4f]">
-                  +12.4%
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  ["Income", "₺42,800"],
-                  ["Expense", "₺18,250"],
-                  ["Savings", "₺15,000"],
-                  ["Debt", "₺9,700"],
-                ].map(([label, value]) => (
-                  <div
-                    key={label}
-                    className="rounded-3xl bg-white p-4 shadow-sm"
-                  >
-                    <p className="text-xs text-[#697077]">{label}</p>
-                    <p className="mt-2 text-lg font-semibold">{value}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-4 rounded-3xl bg-white p-4 shadow-sm">
-                <div className="mb-4 flex items-center justify-between">
-                  <p className="text-sm font-semibold">Upcoming Payments</p>
-                  <span className="text-xs text-[#697077]">May</span>
-                </div>
-
-                <div className="space-y-3">
-                  {[
-                    ["Mortgage", "May 12", "₺8,500"],
-                    ["Credit Card", "May 18", "₺4,250"],
-                    ["Netflix", "May 21", "₺229"],
-                  ].map(([name, date, amount]) => (
-                    <div
-                      key={name}
-                      className="flex items-center justify-between rounded-2xl bg-[#f5f6f7] px-3 py-3"
-                    >
-                      <div>
-                        <p className="text-sm font-medium">{name}</p>
-                        <p className="text-xs text-[#697077]">{date}</p>
-                      </div>
-                      <p className="text-sm font-semibold">{amount}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <Image
+              src="/images/hero/Macbook-iPhone-Hero.svg"
+              alt="Damsera MacBook Preview"
+              width={2400}
+              height={1500}
+              priority
+              className="relative h-auto w-full object-contain drop-shadow-[0_50px_140px_rgba(0,0,0,0.24)]"
+            />
           </div>
+
         </motion.div>
       </div>
     </section>

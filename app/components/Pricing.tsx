@@ -1,37 +1,32 @@
+const sharedFeatures = [
+  "All premium finance modules included",
+  "Dashboard, transactions, budgets and reports",
+  "Cashflow, calendar, subscriptions, debts and loans",
+  "iPhone and Mac access",
+  "Local-first secure data storage",
+  "Optional iCloud sync",
+  "Future feature updates included",
+];
+
 const plans = [
   {
     name: "Monthly",
-    price: "₺100",
-    description: "Flexible access for everyday users.",
-    features: [
-      "All core finance modules",
-      "iPhone, iPad and Mac access",
-      "Secure local storage",
-      "Monthly financial insights",
-    ],
+    price: "$4",
+    period: "/ month",
+    description: "Flexible access with the full premium experience.",
   },
   {
     name: "Yearly",
-    price: "₺900",
-    description: "Best value for serious planning.",
+    price: "$32",
+    period: "/ year",
+    description: "Best value for long-term financial planning.",
     popular: true,
-    features: [
-      "Everything in Monthly",
-      "Full reporting tools",
-      "Calendar-based planning",
-      "Priority feature updates",
-    ],
   },
   {
     name: "Lifetime",
-    price: "₺2500",
-    description: "One-time payment. Long-term ownership.",
-    features: [
-      "Lifetime access",
-      "Premium finance suite",
-      "Future platform updates",
-      "No recurring subscription",
-    ],
+    price: "$110",
+    period: " one-time",
+    description: "Pay once and keep lifetime premium access.",
   },
 ];
 
@@ -45,12 +40,12 @@ export default function Pricing() {
           </p>
 
           <h2 className="text-4xl font-semibold tracking-[-0.04em] text-[#1f2428] sm:text-5xl">
-            Simple plans for a premium finance system.
+            One premium experience. Choose how you want to pay.
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-[#5f6b73]">
-            Start with the plan that fits your financial workflow. Upgrade as
-            your money system becomes more advanced.
+            Every plan unlocks the complete Damsera experience. Monthly, yearly
+            or lifetime — all features are included.
           </p>
         </div>
 
@@ -58,7 +53,7 @@ export default function Pricing() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative rounded-[36px] border p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl ${
+              className={`relative flex flex-col rounded-[36px] border p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl ${
                 plan.popular
                   ? "border-[#1f2428] bg-[#1f2428] text-white"
                   : "border-[#e4e7ea] bg-[#f8f9fa] text-[#1f2428]"
@@ -66,31 +61,49 @@ export default function Pricing() {
             >
               {plan.popular && (
                 <div className="absolute right-6 top-6 rounded-full bg-white px-3 py-1 text-xs font-semibold text-[#1f2428]">
-                  Popular
+                  Best Value
                 </div>
               )}
 
               <h3 className="text-2xl font-semibold">{plan.name}</h3>
 
               <p
-                className={`mt-3 leading-7 ${
+                className={`mt-3 min-h-[56px] leading-7 ${
                   plan.popular ? "text-white/65" : "text-[#5f6b73]"
                 }`}
               >
                 {plan.description}
               </p>
 
-              <div className="mt-8">
+              <div className="mt-8 flex items-end gap-2">
                 <span className="text-5xl font-semibold tracking-tight">
                   {plan.price}
                 </span>
+
+                <span
+                  className={`pb-1 text-sm font-medium ${
+                    plan.popular ? "text-white/55" : "text-[#697077]"
+                  }`}
+                >
+                  {plan.period}
+                </span>
               </div>
 
-              <div className="mt-8 space-y-4">
-                {plan.features.map((feature) => (
-                  <div key={feature} className="flex items-center gap-3">
+              <div
+                className={`mt-7 rounded-2xl px-4 py-3 text-sm font-medium ${
+                  plan.popular
+                    ? "bg-white/10 text-white/75"
+                    : "bg-white text-[#5f6b73]"
+                }`}
+              >
+                Same premium features in every plan.
+              </div>
+
+              <div className="mt-8 flex-1 space-y-4">
+                {sharedFeatures.map((feature) => (
+                  <div key={feature} className="flex items-start gap-3">
                     <span
-                      className={`h-2 w-2 rounded-full ${
+                      className={`mt-2 h-2 w-2 shrink-0 rounded-full ${
                         plan.popular ? "bg-white" : "bg-[#1f2428]"
                       }`}
                     />

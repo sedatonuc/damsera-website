@@ -12,6 +12,7 @@ import IntroLoader from "./components/IntroLoader";
 import Modules from "./components/Modules";
 import Navbar from "./components/Navbar";
 import Pricing from "./components/Pricing";
+import FullFeatureList from "./components/FullFeatureList";
 import Security from "./components/Security";
 
 export default function Home() {
@@ -45,6 +46,8 @@ export default function Home() {
       <Security />
 
       <Pricing />
+      
+      <FullFeatureList />
 
       <FAQ />
 
