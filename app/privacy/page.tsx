@@ -197,6 +197,24 @@ export default function PrivacyPage() {
               </p>
             </div>
 
+            {/* Section 8: Website Visitor Analytics & Performance Indicators */}
+            <div className="space-y-4 border-t border-[#e4e7ea] pt-8">
+              <h2 className="text-2xl font-semibold tracking-tight">8. Website Visitor Analytics &amp; Page Performance</h2>
+              <p className="text-base leading-8 text-[#5f6b73]">
+                While the Damsera native application itself contains zero third-party telemetry scripts and operates fully offline, 
+                our public-facing promotional website uses lightweight analytics services to optimize our design, inspect page loading speeds, and understand general user traffic patterns. These include:
+              </p>
+              <ul className="list-disc pl-6 space-y-3.5 text-base leading-7 text-[#5f6b73]">
+                <li><strong>Vercel Analytics &amp; Speed Insights:</strong> Monitors page load times, layout stability, and basic anonymous visitor counts to keep our rendering speeds optimized.</li>
+                <li><strong>Google Analytics:</strong> Collects generalized, non-personally identifiable metrics (such as device types, general regions, and page pathways) to optimize search discovery.</li>
+                <li><strong>Microsoft Clarity:</strong> Analyzes user sessions on our web portal via anonymized scroll patterns and heatmaps to refine our interactive documentation layout.</li>
+              </ul>
+              <p className="text-base leading-8 text-[#5f6b73]">
+                None of these web analytics platforms have access to your local SQLite sandbox database, financial transaction ledgers, 
+                or iCloud sync keys. They operate strictly on the public-facing promotional website container.
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
