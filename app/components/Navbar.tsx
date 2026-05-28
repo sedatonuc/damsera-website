@@ -208,25 +208,15 @@ export default function Navbar() {
                 <ModuleButtonList pathname={pathname} />
               </>
             ) : (
-              homeLinks.map((link) =>
-                link.href.startsWith("/") ? (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    className="transition hover:text-[#1f2428]"
-                  >
-                    {link.label}
-                  </Link>
-                ) : (
-                  <a
-                    key={link.label}
-                    href={resolveHref(link.href)}
-                    className="transition hover:text-[#1f2428]"
-                  >
-                    {link.label}
-                  </a>
-                )
-              )
+              homeLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href.startsWith("/") ? link.href : resolveHref(link.href)}
+                  className="transition hover:text-[#1f2428]"
+                >
+                  {link.label}
+                </a>
+              ))
             )}
           </div>
         )}
@@ -286,7 +276,7 @@ export default function Navbar() {
                 <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#a0a5a8]">Navigation</h4>
                 <div className="grid grid-cols-2 gap-2">
                   {homeLinks.map((link) => (
-                    <Link
+                    <a
                       key={link.label}
                       href={link.href.startsWith("/") ? link.href : resolveHref(link.href)}
                       onClick={() => setIsOpen(false)}
@@ -294,7 +284,7 @@ export default function Navbar() {
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-[#1f2428]/30" />
                       {link.label}
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>
