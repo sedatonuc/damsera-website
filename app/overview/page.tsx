@@ -264,7 +264,7 @@ export default function OverviewPage() {
               {/* Combined MacBook & iPhone Dashboard Preview */}
               <div className="relative z-10 w-full max-w-[920px]">
                 <Image
-                  src="/images/Overview/MacBook-iPhone-Overview.svg"
+                  src="/images/Overview/MacBook-iPhone-Dashboard.png"
                   alt="Damsera MacBook & iPhone Workspace Overview"
                   width={2800}
                   height={1700}

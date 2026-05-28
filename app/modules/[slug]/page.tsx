@@ -38,7 +38,7 @@ import { notFound } from "next/navigation";
 const modules = {
   dashboard: {
     label: "Dashboard Module",
-    imagePath: "/images/Dashboard/MacBook-iPhone-Dashboard.svg",
+    imagePath: "/images/Dashboard/MacBook-iPhone-Dashboard.png",
     title: "Your entire financial life. One intelligent overview.",
     description:
       "Dashboard brings income, expenses, savings, cashflow and key financial signals into one calm Apple-native workspace.",
@@ -60,7 +60,7 @@ const modules = {
 
   transactions: {
     label: "Transactions Module",
-    imagePath: "/images/Transactions/MacBook-iPhone-Transactions.svg",
+    imagePath: "/images/Transactions/MacBook-iPhone-Transactions.png",
     title: "Every transaction organized with clarity.",
     description:
       "Track income, expenses and transfers with clean categorization, filters and a fast daily entry workflow.",
@@ -82,7 +82,7 @@ const modules = {
 
   budgets: {
     label: "Budgets Module",
-    imagePath: "/images/Budgets/MacBook-iPhone-Budgets.svg",
+    imagePath: "/images/Budgets/MacBook-iPhone-Budgets.png",
     title: "Plan spending before it happens.",
     description:
       "Create monthly budgets, monitor category limits and understand where your money is going.",
@@ -104,7 +104,7 @@ const modules = {
 
   cashflow: {
     label: "Cashflow Module",
-    imagePath: "/images/Cashflow/MacBook-iPhone-Cashflow.svg",
+    imagePath: "/images/Cashflow/MacBook-iPhone-Cashflow.png",
     title: "Understand how money moves over time.",
     description:
       "Visualize inflows, outflows and net movement with a clean cashflow command center.",
@@ -126,7 +126,7 @@ const modules = {
 
   calendar: {
     label: "Calendar Module",
-    imagePath: "/images/Calendar/MacBook-iPhone-Calendar.svg",
+    imagePath: "/images/Calendar/MacBook-iPhone-Calendar.png",
     title: "Read your finances through time.",
     description:
       "Calendar transforms income, expenses, payments and financial events into a daily, weekly and monthly planning view.",
@@ -148,7 +148,7 @@ const modules = {
 
   subscriptions: {
     label: "Subscriptions Module",
-    imagePath: "/images/Subscriptions/MacBook-iPhone-Subscriptions.svg",
+    imagePath: "/images/Subscriptions/MacBook-iPhone-Subscriptions.png",
     title: "Keep recurring payments under control.",
     description:
       "Track subscriptions, upcoming renewals and recurring charges before they surprise you.",
@@ -170,7 +170,7 @@ const modules = {
 
   debts: {
     label: "Debts Module",
-    imagePath: "/images/Debts/MacBook-iPhone-Debts.svg",
+    imagePath: "/images/Debts/MacBook-iPhone-Debts.png",
     title: "Manage debts with a clear repayment view.",
     description:
       "Track debt balances, payment progress and upcoming obligations in one organized module.",
@@ -192,7 +192,7 @@ const modules = {
 
   loans: {
     label: "Loans Module",
-    imagePath: "/images/Loans/MacBook-iPhone-Loans.svg",
+    imagePath: "/images/Loans/MacBook-iPhone-Loans.png",
     title: "Track loans with structure and confidence.",
     description:
       "Manage loan details, repayment plans and installment visibility across your workspace.",
@@ -214,7 +214,7 @@ const modules = {
 
   goals: {
     label: "Goals Module",
-    imagePath: "/images/Goals/MacBook-iPhone-Goals.svg",
+    imagePath: "/images/Goals/MacBook-iPhone-Goals.png",
     title: "Build financial goals you can actually follow.",
     description:
       "Create saving goals, track progress and stay focused on long-term financial milestones.",
@@ -236,7 +236,7 @@ const modules = {
 
   reports: {
     label: "Reports Module",
-    imagePath: "/images/Reports/MacBook-iPhone-Reports.svg",
+    imagePath: "/images/Reports/MacBook-iPhone-Reports.png",
     title: "Turn financial activity into clean reports.",
     description:
       "Generate structured summaries for income, expenses, savings and long-term financial review.",
@@ -258,7 +258,7 @@ const modules = {
 
   insights: {
     label: "Insights Module",
-    imagePath: "/images/Insights/MacBook-iPhone-Insights.svg",
+    imagePath: "/images/Insights/MacBook-iPhone-Insights.png",
     title: "Smarter signals for better financial decisions.",
     description:
       "Discover patterns, trends and meaningful financial signals without reading endless charts.",
@@ -280,7 +280,7 @@ const modules = {
 
   notifications: {
     label: "Notifications Module",
-    imagePath: "/images/Notifications/MacBook-iPhone-Notifications.svg",
+    imagePath: "/images/Notifications/MacBook-iPhone-Notifications.png",
     title: "Stay informed at the right time.",
     description:
       "Receive daily summaries, reminders and important financial alerts without opening the app constantly.",
@@ -302,7 +302,7 @@ const modules = {
 
   system: {
     label: "System Module",
-    imagePath: "/images/System/MacBook-iPhone-System.svg",
+    imagePath: "/images/System/MacBook-iPhone-System.png",
     title: "Control the workspace around your own workflow.",
     description:
       "Manage app settings, security, appearance, backup, restore and workspace behavior from one control center.",
@@ -360,7 +360,7 @@ export default async function ModulePage({
   const imagePathOnDisk = path.join(process.cwd(), "public", currentModule.imagePath);
   const resolvedImagePath = fs.existsSync(imagePathOnDisk)
     ? currentModule.imagePath
-    : "/images/Dashboard/MacBook-iPhone-Dashboard.svg";
+    : "/images/Dashboard/MacBook-iPhone-Dashboard.png";
 
   return (
     <main className="min-h-screen bg-[#f5f6f7] text-[#1f2428]">
@@ -400,7 +400,7 @@ export default async function ModulePage({
             </div>
           </div>
 
-          <div className="relative mx-auto -mt-[13%] -mb-[8%] max-w-6xl">
+          <div className="relative mx-auto mt-6 max-w-6xl">
             <div className="relative flex items-center justify-center">
               <div className="relative z-10 w-full max-w-[880px]">
                 <Image

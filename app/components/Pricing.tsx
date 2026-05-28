@@ -24,7 +24,7 @@ const plans = [
   },
   {
     name: "Lifetime",
-    price: "$109.99",
+    price: "$99.99",
     period: " one-time",
     description: "Pay once and keep lifetime premium access.",
   },
@@ -54,8 +54,8 @@ export default function Pricing() {
             <div
               key={plan.name}
               className={`relative flex flex-col rounded-[36px] border p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl ${plan.popular
-                  ? "border-[#1f2428] bg-[#1f2428] text-white"
-                  : "border-[#e4e7ea] bg-[#f8f9fa] text-[#1f2428]"
+                ? "border-[#1f2428] bg-[#1f2428] text-white"
+                : "border-[#e4e7ea] bg-[#f8f9fa] text-[#1f2428]"
                 }`}
             >
               {plan.popular && (
@@ -88,11 +88,11 @@ export default function Pricing() {
 
               <div
                 className={`mt-7 rounded-2xl px-4 py-3 text-sm font-medium ${plan.popular
-                    ? "bg-white/10 text-white/75"
-                    : "bg-white text-[#5f6b73]"
+                  ? "bg-white/10 text-white/75"
+                  : "bg-white text-[#5f6b73]"
                   }`}
               >
-                Same premium features in every plan.
+                Unlimited access to all Pro features
               </div>
 
               <div className="mt-8 flex-1 space-y-4">

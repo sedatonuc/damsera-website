@@ -13,45 +13,44 @@ export function proxy(request: NextRequest) {
     hostname.endsWith(".local") ||
     hostname.includes("192.168.");
 
-  // Check if it is a static asset or legal page
+  // Static assets
   const isStaticFile =
     pathname.startsWith("/_next") ||
     pathname.startsWith("/images") ||
     pathname.startsWith("/favicon.ico") ||
     pathname.startsWith("/logo.png") ||
     pathname.startsWith("/icon.png") ||
-    pathname.includes(".") || // files like sitemap.xml, robot.txt, etc.
+    pathname.includes(".") ||
     pathname === "/sitemap.xml" ||
     pathname === "/robots.txt";
 
+  // Legal pages
   const isLegalPage =
     pathname === "/privacy" ||
     pathname === "/terms" ||
     pathname === "/data-rights";
 
-  // Enforce Canonical Domain in Production
+  // Public pages
+  const isPublicPage =
+    pathname === "/" ||
+    pathname === "/overview" ||
+    pathname.startsWith("/modules") ||
+    isLegalPage ||
+    isStaticFile;
+
+  // Canonical domain enforcement
   if (!isLocalhost && hostname !== "www.damseraapp.com") {
-    // If it's a static file or legal page, keep the path, just switch domain
-    if (isStaticFile || isLegalPage) {
-      url.hostname = "www.damseraapp.com";
-      url.protocol = "https:";
-      url.port = "";
+    url.hostname = "www.damseraapp.com";
+    url.protocol = "https:";
+    url.port = "";
+
+    // Keep route path for allowed pages
+    if (isPublicPage) {
       return NextResponse.redirect(url, 301);
     }
-    // For anything else, direct straight to root canonical homepage
-    return NextResponse.redirect("https://www.damseraapp.com/", 301);
-  }
 
-  // Block and Redirect Deep/Sub-Module or Overview Routes
-  if (pathname.startsWith("/modules") || pathname.startsWith("/overview")) {
-    if (isLocalhost) {
-      // Local redirection to local homepage root
-      url.pathname = "/";
-      return NextResponse.redirect(url, 307);
-    } else {
-      // Production redirection to canonical root homepage
-      return NextResponse.redirect("https://www.damseraapp.com/", 301);
-    }
+    // Redirect unknown routes to homepage
+    return NextResponse.redirect("https://www.damseraapp.com/", 301);
   }
 
   return NextResponse.next();
@@ -59,13 +58,6 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     */
     "/((?!api|_next/static|_next/image|favicon.ico).*)",
   ],
 };

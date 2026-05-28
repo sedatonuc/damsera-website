@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import {
   ArrowLeftRight,
   BadgeDollarSign,
@@ -15,7 +16,6 @@ import {
   Tags,
   Target,
   Wallet,
-  X,
 } from "lucide-react";
 
 const modules = [
@@ -74,11 +74,11 @@ const modules = [
       "Generate clean financial summaries, analyze income vs expense and export PDF-style reports.",
   },
   {
-  title: "Cashflow",
-  icon: ChartNoAxesCombined,
-  description:
-    "Visualize how income, expenses, savings and debts move through your financial life with flow-based analysis.",
-},
+    title: "Cashflow",
+    icon: ChartNoAxesCombined,
+    description:
+      "Visualize how income, expenses, savings and debts move through your financial life with flow-based analysis.",
+  },
   {
     title: "Calendar",
     icon: CalendarDays,
@@ -131,21 +131,21 @@ export default function Modules() {
               ].map((item) => (
                 <div key={item} className="flex items-center gap-4">
                   <div className="h-2.5 w-2.5 rounded-full bg-[#1f2428]" />
-
                   <p className="font-medium text-[#1f2428]">{item}</p>
                 </div>
               ))}
             </div>
 
-            {/* Explore Modules CTA Button */}
             <div className="mt-10">
-              <a
-                href={`/modules/${selected.title.toLowerCase() === "accounts" ? "dashboard" : selected.title.toLowerCase() === "credit cards" ? "debts" : selected.title.toLowerCase() === "categories" ? "system" : selected.title.toLowerCase()}`}
-                className="group inline-flex items-center gap-2.5 rounded-full bg-[#1f2428] px-7 py-4 text-center text-sm font-semibold text-white shadow-[0_12px_24px_rgba(31,36,40,0.1)] transition-all duration-300 hover:bg-black hover:shadow-[0_18px_36px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              <Link
+                href="/overview"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-[#1f2428] px-7 py-4 text-center text-sm font-semibold text-white shadow-[0_12px_24px_rgba(31,36,40,0.1)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-black hover:shadow-[0_18px_36px_rgba(0,0,0,0.2)] active:translate-y-0"
               >
-                <span>Explore {selected.title} in Detail</span>
-                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-              </a>
+                <span>Explore Modules in Detail</span>
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
             </div>
 
             <div className="mt-10 rounded-[32px] border border-black/5 bg-[#f8f9fa] p-7 shadow-[0_20px_70px_rgba(31,36,40,0.07)]">
@@ -180,18 +180,16 @@ export default function Modules() {
                   key={module.title}
                   type="button"
                   onClick={() => setSelected(module)}
-                  className={`rounded-[28px] border p-5 text-left transition duration-300 ${
-                    isActive
-                      ? "border-[#1f2428]/20 bg-white shadow-[0_20px_60px_rgba(31,36,40,0.12)]"
-                      : "border-[#e4e7ea] bg-[#f8f9fa] hover:-translate-y-1 hover:bg-white hover:shadow-lg"
-                  }`}
+                  className={`rounded-[28px] border p-5 text-left transition duration-300 ${isActive
+                    ? "border-[#1f2428]/20 bg-white shadow-[0_20px_60px_rgba(31,36,40,0.12)]"
+                    : "border-[#e4e7ea] bg-[#f8f9fa] hover:-translate-y-1 hover:bg-white hover:shadow-lg"
+                    }`}
                 >
                   <div
-                    className={`mb-6 flex h-12 w-12 items-center justify-center rounded-2xl transition ${
-                      isActive
-                        ? "bg-[#1f2428] text-white"
-                        : "bg-white text-[#111827] shadow-sm"
-                    }`}
+                    className={`mb-6 flex h-12 w-12 items-center justify-center rounded-2xl transition ${isActive
+                      ? "bg-[#1f2428] text-white"
+                      : "bg-white text-[#111827] shadow-sm"
+                      }`}
                   >
                     <Icon className="h-5 w-5" strokeWidth={2.2} />
                   </div>
