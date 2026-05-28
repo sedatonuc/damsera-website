@@ -136,11 +136,11 @@ export default function DataRightsPage() {
 
           {/* Compliance & Contact */}
           <div className="mt-14 space-y-4 border-t border-[#e4e7ea] pt-8 text-[#1f2428]">
-            <h2 className="text-2xl font-semibold tracking-tight">Need Assistance?</h2>
+             <h2 className="text-2xl font-semibold tracking-tight">Need Assistance?</h2>
             <p className="text-base leading-8 text-[#5f6b73]">
               Since we have zero access to your database records, we cannot execute backups or erasures on your behalf. However, 
               if you need technical guidance on managing your iCloud CloudKit containers, exporting CSV transcripts, or have questions 
-              about our privacy engineering benchmarks, contact our team at **datarights@damsera.com**.
+              about our privacy engineering benchmarks, contact our team at **support@damseraapp.com**.
             </p>
           </div>
         </div>

@@ -193,7 +193,7 @@ export default function PrivacyPage() {
               <h2 className="text-2xl font-semibold tracking-tight">7. Corporate Compliance & Inquiries</h2>
               <p className="text-base leading-8 text-[#5f6b73]">
                 Damsera is committed to maintaining the highest privacy benchmarks. For corporate audits, legal EULA inquiries, or general 
-                clarifications regarding our offline-first codebase architecture, contact our Data Protection Representative at **privacy@damsera.com**.
+                clarifications regarding our offline-first codebase architecture, contact our Data Protection Representative at **support@damseraapp.com**.
               </p>
             </div>
 

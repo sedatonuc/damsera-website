@@ -170,7 +170,7 @@ export default function TermsPage() {
               <h2 className="text-2xl font-semibold tracking-tight">8. Legal & EULA Inquiries</h2>
               <p className="text-base leading-8 text-[#5f6b73]">
                 For legal compliance, business partnership queries, or further clarifications regarding our EULA licensing guidelines, 
-                contact us at **terms@damsera.com**.
+                contact us at **support@damseraapp.com**.
               </p>
             </div>
 
