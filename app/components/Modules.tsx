@@ -137,6 +137,17 @@ export default function Modules() {
               ))}
             </div>
 
+            {/* Explore Modules CTA Button */}
+            <div className="mt-10">
+              <a
+                href="/modules/dashboard"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-[#1f2428] px-7 py-4 text-center text-sm font-semibold text-white shadow-[0_12px_24px_rgba(31,36,40,0.1)] transition-all duration-300 hover:bg-black hover:shadow-[0_18px_36px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              >
+                <span>Explore Modules in Detail</span>
+                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </a>
+            </div>
+
             <div className="mt-10 rounded-[32px] border border-black/5 bg-[#f8f9fa] p-7 shadow-[0_20px_70px_rgba(31,36,40,0.07)]">
               <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-sm">
                 <SelectedIcon

@@ -19,9 +19,6 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-wrap gap-5 text-sm font-medium text-[#697077]">
-          <a href="/overview" className="transition hover:text-[#1f2428]">
-            Overview
-          </a>
           <a href="/#features" className="transition hover:text-[#1f2428]">
             Features
           </a>

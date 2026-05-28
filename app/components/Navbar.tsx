@@ -25,7 +25,6 @@ import {
 import Logo from "./Logo";
 
 const homeLinks = [
-  { label: "Overview", href: "/overview" },
   { label: "Features", href: "#features" },
   { label: "Modules", href: "#modules" },
   { label: "Security", href: "#security" },
