@@ -99,7 +99,7 @@ function NavbarSeparator() {
 
 function ModuleButtonList({ pathname }: { pathname: string }) {
   return (
-    <div className="hidden items-center gap-2 xl:flex">
+    <div className="hidden items-center gap-1.5 lg:flex">
       {moduleLinks.map((item) => {
         const isActive = pathname === item.href;
         const Icon = item.icon;
@@ -123,7 +123,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const isHome = pathname === "/";
-  const isOverview = pathname === "/overview";
+  const isOverview = pathname === "/overview" || pathname === "/overview/";
   const isModulePage = pathname.startsWith("/modules");
 
   const resolveHref = (href: string) => {
