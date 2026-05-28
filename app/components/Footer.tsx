@@ -31,6 +31,12 @@ export default function Footer() {
           <a href="/#pricing" className="transition hover:text-[#1f2428]">
             Pricing
           </a>
+          <a href="/#faq" className="transition hover:text-[#1f2428]">
+            FAQ
+          </a>
+          <a href="/#contact" className="transition hover:text-[#1f2428]">
+            Contact
+          </a>
         </div>
       </div>
 

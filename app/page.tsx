@@ -15,6 +15,7 @@ const Security = dynamic(() => import("./components/Security"), { ssr: false });
 const Pricing = dynamic(() => import("./components/Pricing"), { ssr: false });
 const FullFeatureList = dynamic(() => import("./components/FullFeatureList"), { ssr: false });
 const FAQ = dynamic(() => import("./components/FAQ"), { ssr: false });
+const Contact = dynamic(() => import("./components/Contact"), { ssr: false });
 const Footer = dynamic(() => import("./components/Footer"), { ssr: false });
 
 export default function Home() {
@@ -50,6 +51,8 @@ export default function Home() {
       <FullFeatureList />
 
       <FAQ />
+
+      <Contact />
 
       <Footer />
     </main>
