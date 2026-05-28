@@ -140,10 +140,10 @@ export default function Modules() {
             {/* Explore Modules CTA Button */}
             <div className="mt-10">
               <a
-                href="/modules/dashboard"
+                href={`/modules/${selected.title.toLowerCase() === "accounts" ? "dashboard" : selected.title.toLowerCase() === "credit cards" ? "debts" : selected.title.toLowerCase() === "categories" ? "system" : selected.title.toLowerCase()}`}
                 className="group inline-flex items-center gap-2.5 rounded-full bg-[#1f2428] px-7 py-4 text-center text-sm font-semibold text-white shadow-[0_12px_24px_rgba(31,36,40,0.1)] transition-all duration-300 hover:bg-black hover:shadow-[0_18px_36px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
-                <span>Explore Modules in Detail</span>
+                <span>Explore {selected.title} in Detail</span>
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </a>
             </div>
