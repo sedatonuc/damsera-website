@@ -133,6 +133,17 @@ export default function Navbar() {
     return href;
   };
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    setIsOpen(false);
+    if (isHome) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
   // Prevent background scroll when mobile menu is open
   useEffect(() => {
     if (isOpen) {
@@ -153,7 +164,7 @@ export default function Navbar() {
   return (
     <header className="fixed left-0 top-0 z-50 w-full px-6 py-5">
       <nav className="relative mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/70 bg-white/75 px-5 py-3 shadow-sm backdrop-blur-xl">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
+        <Link href="/" className="flex items-center gap-3" onClick={handleLogoClick}>
           <Logo className="h-7 w-7 text-[#1f2428]" />
           <span className="text-sm font-semibold tracking-tight text-[#1f2428]">
             Damsera
