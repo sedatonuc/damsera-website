@@ -118,17 +118,6 @@ export default function Pricing() {
                   </div>
                 ))}
               </div>
-
-              <a
-                href="#"
-                className={`mt-9 block rounded-full px-6 py-4 text-center text-sm font-semibold transition ${
-                  plan.popular
-                    ? "bg-white text-[#1f2428] hover:bg-[#f0f2f3]"
-                    : "bg-[#1f2428] text-white hover:bg-black"
-                }`}
-              >
-                Choose {plan.name}
-              </a>
             </div>
           ))}
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowLeftRight,
@@ -354,8 +354,110 @@ const featureGroups = [
 
 export default function FullArchitectureTabs() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const activeGroup = featureGroups[activeIndex];
   const ActiveIcon = activeGroup.icon;
+
+  const tabContent = (
+    <>
+      <div className="mb-8 overflow-hidden rounded-[34px] bg-[#f5f6f7] p-6">
+        <div className="rounded-[28px] bg-[#1f2428] p-5 text-white shadow-[0_30px_90px_rgba(31,36,40,0.18)]">
+          <div className="mb-6 flex items-center justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/40">
+                Damsera Preview
+              </p>
+              <h3 className="mt-2 text-2xl font-semibold tracking-[-0.04em]">
+                {activeGroup.title}
+              </h3>
+            </div>
+
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-[#1f2428]">
+              <ActiveIcon className="h-6 w-6" strokeWidth={2.2} />
+            </div>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-3">
+            {activeGroup.items.slice(0, 3).map((item) => (
+              <div
+                key={item}
+                className="rounded-2xl border border-white/10 bg-white/[0.06] p-4"
+              >
+                <div className="mb-4 h-2 w-12 rounded-full bg-white/25" />
+                <p className="text-sm leading-6 text-white/75">
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-8 flex flex-col justify-between gap-5 sm:flex-row sm:items-start">
+        <div>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#697077]">
+            Selected System
+          </p>
+
+          <h3 className="text-4xl font-semibold tracking-[-0.05em] text-[#1f2428]">
+            {activeGroup.title}
+          </h3>
+
+          <p className="mt-4 max-w-2xl text-lg leading-8 text-[#5f6b73]">
+            {activeGroup.description}
+          </p>
+        </div>
+
+        <div className="w-fit rounded-full bg-[#f8f9fa] px-4 py-2 text-sm font-semibold text-[#1f2428] shadow-sm">
+          {activeGroup.items.length} features
+        </div>
+      </div>
+
+      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+        {activeGroup.items.map((item) => (
+          <div
+            key={item}
+            className="group rounded-2xl bg-[#f8f9fa] px-4 py-3 text-sm leading-6 text-[#5f6b73] transition hover:bg-[#1f2428] hover:text-white"
+          >
+            {item}
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-8 grid gap-4 sm:grid-cols-3">
+        <div className="rounded-[24px] bg-[#f8f9fa] p-5">
+          <Sparkles className="h-5 w-5 text-[#1f2428]" />
+          <p className="mt-4 text-sm font-semibold text-[#1f2428]">
+            Premium included
+          </p>
+        </div>
+
+        <div className="rounded-[24px] bg-[#f8f9fa] p-5">
+          <ShieldCheck className="h-5 w-5 text-[#1f2428]" />
+          <p className="mt-4 text-sm font-semibold text-[#1f2428]">
+            Private by design
+          </p>
+        </div>
+
+        <div className="rounded-[24px] bg-[#f8f9fa] p-5">
+          <CalendarDays className="h-5 w-5 text-[#1f2428]" />
+          <p className="mt-4 text-sm font-semibold text-[#1f2428]">
+            Built for planning
+          </p>
+        </div>
+      </div>
+    </>
+  );
 
   return (
     <section
@@ -403,37 +505,24 @@ export default function FullArchitectureTabs() {
                       <div
                         className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl transition ${
                           isActive
-                            ? "bg-white/10 text-white"
-                            : "bg-white text-[#1f2428] shadow-sm group-hover:bg-[#eef0f2]"
+                            ? "bg-white text-[#1f2428]"
+                            : "bg-[#1f2428]/5 text-[#1f2428]"
                         }`}
                       >
                         <Icon className="h-5 w-5" strokeWidth={2.2} />
                       </div>
 
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-center justify-between gap-3">
-                          <p className="truncate text-sm font-semibold tracking-[-0.02em]">
-                            {group.title}
-                          </p>
-
-                          <span
-                            className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold ${
-                              isActive
-                                ? "bg-white/15 text-white"
-                                : "bg-white text-[#697077]"
-                            }`}
-                          >
-                            {group.items.length}
-                          </span>
-                        </div>
-
+                      <div className="overflow-hidden">
                         <p
-                          className={`mt-1 truncate text-xs ${
-                            isActive ? "text-white/55" : "text-[#697077]"
+                          className={`text-xs font-semibold uppercase tracking-[0.2em] transition ${
+                            isActive ? "text-white/40" : "text-[#697077]"
                           }`}
                         >
                           {group.subtitle}
                         </p>
+                        <h4 className="truncate text-lg font-semibold tracking-[-0.03em]">
+                          {group.title}
+                        </h4>
                       </div>
                     </div>
                   </button>
@@ -443,103 +532,22 @@ export default function FullArchitectureTabs() {
           </div>
 
           <div className="overflow-hidden rounded-[44px] border border-black/5 bg-white shadow-[0_30px_100px_rgba(31,36,40,0.08)]">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeGroup.title}
-                initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, y: -12, filter: "blur(8px)" }}
-                transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-                className="p-6 sm:p-8"
-              >
-                <div className="mb-8 overflow-hidden rounded-[34px] bg-[#f5f6f7] p-6">
-                  <div className="rounded-[28px] bg-[#1f2428] p-5 text-white shadow-[0_30px_90px_rgba(31,36,40,0.18)]">
-                    <div className="mb-6 flex items-center justify-between">
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/40">
-                          Damsera Preview
-                        </p>
-                        <h3 className="mt-2 text-2xl font-semibold tracking-[-0.04em]">
-                          {activeGroup.title}
-                        </h3>
-                      </div>
-
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-[#1f2428]">
-                        <ActiveIcon className="h-6 w-6" strokeWidth={2.2} />
-                      </div>
-                    </div>
-
-                    <div className="grid gap-3 sm:grid-cols-3">
-                      {activeGroup.items.slice(0, 3).map((item) => (
-                        <div
-                          key={item}
-                          className="rounded-2xl border border-white/10 bg-white/[0.06] p-4"
-                        >
-                          <div className="mb-4 h-2 w-12 rounded-full bg-white/25" />
-                          <p className="text-sm leading-6 text-white/75">
-                            {item}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mb-8 flex flex-col justify-between gap-5 sm:flex-row sm:items-start">
-                  <div>
-                    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#697077]">
-                      Selected System
-                    </p>
-
-                    <h3 className="text-4xl font-semibold tracking-[-0.05em] text-[#1f2428]">
-                      {activeGroup.title}
-                    </h3>
-
-                    <p className="mt-4 max-w-2xl text-lg leading-8 text-[#5f6b73]">
-                      {activeGroup.description}
-                    </p>
-                  </div>
-
-                  <div className="w-fit rounded-full bg-[#f8f9fa] px-4 py-2 text-sm font-semibold text-[#1f2428] shadow-sm">
-                    {activeGroup.items.length} features
-                  </div>
-                </div>
-
-                <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-                  {activeGroup.items.map((item) => (
-                    <div
-                      key={item}
-                      className="group rounded-2xl bg-[#f8f9fa] px-4 py-3 text-sm leading-6 text-[#5f6b73] transition hover:bg-[#1f2428] hover:text-white"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                  <div className="rounded-[24px] bg-[#f8f9fa] p-5">
-                    <Sparkles className="h-5 w-5 text-[#1f2428]" />
-                    <p className="mt-4 text-sm font-semibold text-[#1f2428]">
-                      Premium included
-                    </p>
-                  </div>
-
-                  <div className="rounded-[24px] bg-[#f8f9fa] p-5">
-                    <ShieldCheck className="h-5 w-5 text-[#1f2428]" />
-                    <p className="mt-4 text-sm font-semibold text-[#1f2428]">
-                      Private by design
-                    </p>
-                  </div>
-
-                  <div className="rounded-[24px] bg-[#f8f9fa] p-5">
-                    <CalendarDays className="h-5 w-5 text-[#1f2428]" />
-                    <p className="mt-4 text-sm font-semibold text-[#1f2428]">
-                      Built for planning
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+            {isMobile ? (
+              <div className="p-6 sm:p-8">{tabContent}</div>
+            ) : (
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeGroup.title}
+                  initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, y: -12, filter: "blur(8px)" }}
+                  transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+                  className="p-6 sm:p-8"
+                >
+                  {tabContent}
+                </motion.div>
+              </AnimatePresence>
+            )}
           </div>
         </div>
       </div>

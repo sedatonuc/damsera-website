@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronRight, X } from "lucide-react";
 
@@ -214,10 +214,70 @@ const featureGroups = [
   },
 ];
 
+function FeatureModalContent({
+  selected,
+  onClose,
+}: {
+  selected: (typeof featureGroups)[number];
+  onClose: () => void;
+}) {
+  return (
+    <>
+      <div className="sticky top-0 z-10 border-b border-black/5 bg-white/90 p-7 backdrop-blur-xl">
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute right-6 top-6 flex h-10 w-10 items-center justify-center rounded-full bg-[#f3f4f6] text-[#697077] transition hover:bg-[#e8ebee] hover:text-[#1f2428]"
+        >
+          <X className="h-4 w-4" />
+        </button>
+
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#697077]">
+          Feature Group
+        </p>
+
+        <h3 className="mt-3 pr-12 text-3xl font-semibold tracking-[-0.04em] text-[#111827]">
+          {selected.title}
+        </h3>
+
+        <p className="mt-2 text-sm text-[#697077]">
+          {selected.items.length} premium features included
+        </p>
+      </div>
+
+      <div className="max-h-[56vh] overflow-y-auto p-7">
+        <div className="grid gap-3 sm:grid-cols-2">
+          {selected.items.map((item) => (
+            <div
+              key={item}
+              className="flex items-start gap-3 rounded-2xl bg-[#f8f9fa] px-4 py-3"
+            >
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1f2428]" />
+              <p className="text-sm leading-6 text-[#5f6b73]">
+                {item}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}
+
 export default function FullFeatureList() {
   const [selected, setSelected] = useState<(typeof featureGroups)[number] | null>(
     null
   );
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <section className="bg-white px-6 pb-28">
@@ -268,70 +328,47 @@ export default function FullFeatureList() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {selected && (
-          <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center px-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
+      {selected && (
+        isMobile ? (
+          <div className="fixed inset-0 z-50 flex items-center justify-center px-6">
             <button
               type="button"
               aria-label="Close feature list"
               onClick={() => setSelected(null)}
               className="absolute inset-0 bg-[#1f2428]/25 backdrop-blur-sm"
             />
-
+            <div className="relative max-h-[82vh] w-full max-w-2xl overflow-hidden rounded-[36px] border border-black/5 bg-white shadow-[0_40px_120px_rgba(31,36,40,0.24)]">
+              <FeatureModalContent selected={selected} onClose={() => setSelected(null)} />
+            </div>
+          </div>
+        ) : (
+          <AnimatePresence>
             <motion.div
-              initial={{ opacity: 0, y: 24, scale: 0.96 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 16, scale: 0.96 }}
-              transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-              className="relative max-h-[82vh] w-full max-w-2xl overflow-hidden rounded-[36px] border border-black/5 bg-white shadow-[0_40px_120px_rgba(31,36,40,0.24)]"
+              className="fixed inset-0 z-50 flex items-center justify-center px-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
             >
-              <div className="sticky top-0 z-10 border-b border-black/5 bg-white/90 p-7 backdrop-blur-xl">
-                <button
-                  type="button"
-                  onClick={() => setSelected(null)}
-                  className="absolute right-6 top-6 flex h-10 w-10 items-center justify-center rounded-full bg-[#f3f4f6] text-[#697077] transition hover:bg-[#e8ebee] hover:text-[#1f2428]"
-                >
-                  <X className="h-4 w-4" />
-                </button>
+              <button
+                type="button"
+                aria-label="Close feature list"
+                onClick={() => setSelected(null)}
+                className="absolute inset-0 bg-[#1f2428]/25 backdrop-blur-sm"
+              />
 
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#697077]">
-                  Feature Group
-                </p>
-
-                <h3 className="mt-3 pr-12 text-3xl font-semibold tracking-[-0.04em] text-[#111827]">
-                  {selected.title}
-                </h3>
-
-                <p className="mt-2 text-sm text-[#697077]">
-                  {selected.items.length} premium features included
-                </p>
-              </div>
-
-              <div className="max-h-[56vh] overflow-y-auto p-7">
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {selected.items.map((item) => (
-                    <div
-                      key={item}
-                      className="flex items-start gap-3 rounded-2xl bg-[#f8f9fa] px-4 py-3"
-                    >
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1f2428]" />
-
-                      <p className="text-sm leading-6 text-[#5f6b73]">
-                        {item}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 24, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 16, scale: 0.96 }}
+                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                className="relative max-h-[82vh] w-full max-w-2xl overflow-hidden rounded-[36px] border border-black/5 bg-white shadow-[0_40px_120px_rgba(31,36,40,0.24)]"
+              >
+                <FeatureModalContent selected={selected} onClose={() => setSelected(null)} />
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </AnimatePresence>
+        )
+      )}
     </section>
   );
 }
