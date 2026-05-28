@@ -296,14 +296,6 @@ export default function Navbar() {
                       {link.label}
                     </Link>
                   ))}
-                  <Link
-                    href="/overview"
-                    onClick={() => setIsOpen(false)}
-                    className="flex items-center gap-2.5 rounded-2xl border border-black/5 bg-neutral-50/60 px-4 py-3.5 text-xs font-bold text-[#1f2428] transition hover:bg-[#1f2428] hover:text-white"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
-                    Overview
-                  </Link>
                 </div>
               </div>
             )}
