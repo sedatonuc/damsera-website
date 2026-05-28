@@ -11,20 +11,20 @@ const sharedFeatures = [
 const plans = [
   {
     name: "Monthly",
-    price: "$4",
+    price: "$3.99",
     period: "/ month",
     description: "Flexible access with the full premium experience.",
   },
   {
     name: "Yearly",
-    price: "$32",
+    price: "$31.99",
     period: "/ year",
     description: "Best value for long-term financial planning.",
     popular: true,
   },
   {
     name: "Lifetime",
-    price: "$110",
+    price: "$109.99",
     period: " one-time",
     description: "Pay once and keep lifetime premium access.",
   },
@@ -53,11 +53,10 @@ export default function Pricing() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative flex flex-col rounded-[36px] border p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl ${
-                plan.popular
+              className={`relative flex flex-col rounded-[36px] border p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl ${plan.popular
                   ? "border-[#1f2428] bg-[#1f2428] text-white"
                   : "border-[#e4e7ea] bg-[#f8f9fa] text-[#1f2428]"
-              }`}
+                }`}
             >
               {plan.popular && (
                 <div className="absolute right-6 top-6 rounded-full bg-white px-3 py-1 text-xs font-semibold text-[#1f2428]">
@@ -68,9 +67,8 @@ export default function Pricing() {
               <h3 className="text-2xl font-semibold">{plan.name}</h3>
 
               <p
-                className={`mt-3 min-h-[56px] leading-7 ${
-                  plan.popular ? "text-white/65" : "text-[#5f6b73]"
-                }`}
+                className={`mt-3 min-h-[56px] leading-7 ${plan.popular ? "text-white/65" : "text-[#5f6b73]"
+                  }`}
               >
                 {plan.description}
               </p>
@@ -81,20 +79,18 @@ export default function Pricing() {
                 </span>
 
                 <span
-                  className={`pb-1 text-sm font-medium ${
-                    plan.popular ? "text-white/55" : "text-[#697077]"
-                  }`}
+                  className={`pb-1 text-sm font-medium ${plan.popular ? "text-white/55" : "text-[#697077]"
+                    }`}
                 >
                   {plan.period}
                 </span>
               </div>
 
               <div
-                className={`mt-7 rounded-2xl px-4 py-3 text-sm font-medium ${
-                  plan.popular
+                className={`mt-7 rounded-2xl px-4 py-3 text-sm font-medium ${plan.popular
                     ? "bg-white/10 text-white/75"
                     : "bg-white text-[#5f6b73]"
-                }`}
+                  }`}
               >
                 Same premium features in every plan.
               </div>
@@ -103,9 +99,8 @@ export default function Pricing() {
                 {sharedFeatures.map((feature) => (
                   <div key={feature} className="flex items-start gap-3">
                     <span
-                      className={`mt-2 h-2 w-2 shrink-0 rounded-full ${
-                        plan.popular ? "bg-white" : "bg-[#1f2428]"
-                      }`}
+                      className={`mt-2 h-2 w-2 shrink-0 rounded-full ${plan.popular ? "bg-white" : "bg-[#1f2428]"
+                        }`}
                     />
 
                     <p
