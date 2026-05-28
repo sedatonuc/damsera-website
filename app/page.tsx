@@ -1,19 +1,21 @@
 "use client";
 
 import { useEffect } from "react";
+import dynamic from "next/dynamic";
 
 import AmbientBackground from "./components/AmbientBackground";
-import TrustBar from "./components/TrustBar";
-import FAQ from "./components/FAQ";
-import Features from "./components/Features";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import IntroLoader from "./components/IntroLoader";
-import Modules from "./components/Modules";
 import Navbar from "./components/Navbar";
-import Pricing from "./components/Pricing";
-import FullFeatureList from "./components/FullFeatureList";
-import Security from "./components/Security";
+import Hero from "./components/Hero";
+
+// Lazy-loaded components below the fold to boost initial mobile FCP and LCP metrics
+const TrustBar = dynamic(() => import("./components/TrustBar"), { ssr: false });
+const Features = dynamic(() => import("./components/Features"), { ssr: false });
+const Modules = dynamic(() => import("./components/Modules"), { ssr: false });
+const Security = dynamic(() => import("./components/Security"), { ssr: false });
+const Pricing = dynamic(() => import("./components/Pricing"), { ssr: false });
+const FullFeatureList = dynamic(() => import("./components/FullFeatureList"), { ssr: false });
+const FAQ = dynamic(() => import("./components/FAQ"), { ssr: false });
+const Footer = dynamic(() => import("./components/Footer"), { ssr: false });
 
 export default function Home() {
   useEffect(() => {
@@ -30,8 +32,6 @@ export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#f5f6f7] text-[#1f2428]">
       <AmbientBackground />
-
-      <IntroLoader />
 
       <Navbar />
 

@@ -477,7 +477,7 @@ export default function TransactionsFocus() {
         </div>
 
         {/* Dynamic Workspace Container */}
-        <div className="mt-16 overflow-hidden rounded-[42px] border border-[#e1e5e8] bg-white/80 p-5 shadow-[0_40px_120px_rgba(31,36,40,0.12)] backdrop-blur-2xl sm:p-8">
+        <div className="mt-16 overflow-hidden rounded-[42px] border border-[#e1e5e8] bg-white p-5 shadow-[0_40px_120px_rgba(31,36,40,0.12)]  sm:p-8">
           <div className="grid gap-8 lg:grid-cols-[280px_1fr]">
             {/* Sidebar Controls & Multi-Filters */}
             <div className="flex flex-col justify-between rounded-[32px] border border-[#e1e5e8] bg-[#f8f9fa] p-5">
