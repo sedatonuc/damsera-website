@@ -54,7 +54,7 @@ export default function Contact() {
 
             return (
               <div
-                key={card.email}
+                key={card.title}
                 className="group relative rounded-[32px] border border-[#e4e7ea] bg-white/80 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_70px_rgba(31,36,40,0.08)] backdrop-blur-md flex flex-col justify-between"
               >
                 <div>
