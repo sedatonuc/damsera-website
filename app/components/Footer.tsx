@@ -49,6 +49,9 @@ export default function Footer() {
           <Link href="/terms" className="transition hover:text-[#1f2428]">
             Terms of Service
           </Link>
+          <Link href="/cookies" className="transition hover:text-[#1f2428]">
+            Cookie Policy
+          </Link>
           <Link href="/data-rights" className="transition hover:text-[#1f2428]">
             Data Rights
           </Link>

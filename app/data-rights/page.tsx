@@ -40,7 +40,7 @@ export default function DataRightsPage() {
               Your Data Rights
             </h1>
             <p className="mt-5 text-sm text-[#697077] font-bold">
-              Last Updated: May 26, 2026 • Version 1.1.0 • GDPR & CCPA Compliance
+              Last Updated: May 30, 2026 • Version 1.1.0 • GDPR &amp; CCPA Compliance
             </p>
             <p className="mt-6 text-lg leading-8 text-[#5f6b73]">
               Damsera operates on a local-first philosophy. Since we never hold or collect your private financial records, 
@@ -51,7 +51,7 @@ export default function DataRightsPage() {
 
           {/* Core Rights Catalog */}
           <div className="mt-12 space-y-8 text-[#1f2428]">
-            <h2 className="text-2xl font-semibold tracking-tight">Your Data Rights under Global Frameworks (GDPR & CCPA)</h2>
+            <h2 className="text-2xl font-semibold tracking-tight">Your Data Rights under Global Frameworks (GDPR &amp; CCPA)</h2>
             <p className="text-base leading-8 text-[#5f6b73]">
               Even though Damsera has no backend databases to harvest your profiles, we empower you to fully exercise your 
               rights under the GDPR, CCPA, and CPRA through localized client-side mechanics:
@@ -59,7 +59,7 @@ export default function DataRightsPage() {
 
             <div className="grid gap-6 sm:grid-cols-2">
               <div className="rounded-[28px] border border-black/5 bg-white p-6 shadow-sm">
-                <h4 className="text-sm font-bold uppercase tracking-wider text-[#1f2428]">1. Right to Access & Know</h4>
+                <h4 className="text-sm font-bold uppercase tracking-wider text-[#1f2428]">1. Right to Access &amp; Know</h4>
                 <p className="mt-2 text-xs leading-5 text-[#5f6b73]">
                   You have immediate, zero-latency access to your complete financial registries 24/7 on your local device. 
                   No internet connection is required to display your transactions history.
@@ -92,7 +92,7 @@ export default function DataRightsPage() {
 
           {/* Action Guides Section */}
           <div className="mt-14 space-y-8 border-t border-[#e4e7ea] pt-8">
-            <h2 className="text-2xl font-semibold tracking-tight">Step-by-Step Data Control & Erasure Guides</h2>
+            <h2 className="text-2xl font-semibold tracking-tight">Step-by-Step Data Control &amp; Erasure Guides</h2>
             <p className="text-base leading-8 text-[#5f6b73]">
               To help you maintain absolute control over your financial records, below are step-by-step instructions on how to manage, 
               port, and erase your data inside Damsera:
@@ -103,7 +103,7 @@ export default function DataRightsPage() {
               <div className="rounded-3xl border border-black/5 bg-white p-6 sm:p-8 space-y-3">
                 <div className="flex items-center gap-3">
                   <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-neutral-100 text-xs font-bold text-[#1f2428]">1</span>
-                  <h3 className="text-base font-bold text-[#1f2428]">How to Export Database & CSV Backups</h3>
+                  <h3 className="text-base font-bold text-[#1f2428]">How to Export Database &amp; CSV Backups</h3>
                 </div>
                 <p className="text-xs leading-5 text-[#5f6b73] pl-10">
                   To export your transaction logs or generate a full backup file:
@@ -128,15 +128,26 @@ export default function DataRightsPage() {
                 </p>
                 <ol className="list-decimal pl-16 text-xs space-y-2 text-[#5f6b73]">
                   <li><strong>Device-Level Purge:</strong> On your iPhone or Mac, delete the Damsera application. This instantly deletes the local database container and all transaction caches.</li>
-                  <li><strong>iCloud Purge (if iCloud sync was active):</strong> Go to your <strong>Apple Device Settings</strong> &gt; Tap <strong>Your Name / Apple ID</strong> &gt; <strong>iCloud</strong> &gt; <strong>Manage Account Storage</strong>. Select <strong>Damsera</strong> and click <strong>Delete Documents &amp; Data</strong> to completely wipe all encrypted CloudKit backups from Apple's servers.</li>
+                  <li><strong>iCloud Purge (if iCloud sync was active):</strong> Go to your <strong>Apple Device Settings</strong> &gt; Tap <strong>Your Name / Apple ID</strong> &gt; <strong>iCloud</strong> &gt; <strong>Manage Account Storage</strong>. Select <strong>Damsera</strong> and click <strong>Delete Documents &amp; Data</strong> to completely wipe all encrypted CloudKit backups from Apple&apos;s servers.</li>
                 </ol>
               </div>
             </div>
           </div>
 
+          {/* Changes to This Page */}
+          <div className="mt-14 space-y-4 border-t border-[#e4e7ea] pt-8 text-[#1f2428]">
+            <h2 className="text-2xl font-semibold tracking-tight">Changes to This Page</h2>
+            <p className="text-base leading-8 text-[#5f6b73]">
+              We may update this page from time to time to reflect changes in the application, legal requirements, or privacy practices.
+            </p>
+            <p className="text-base leading-8 text-[#5f6b73]">
+              The most current version will always be available on this website with an updated revision date.
+            </p>
+          </div>
+
           {/* Compliance & Contact */}
           <div className="mt-14 space-y-4 border-t border-[#e4e7ea] pt-8 text-[#1f2428]">
-             <h2 className="text-2xl font-semibold tracking-tight">Need Assistance?</h2>
+            <h2 className="text-2xl font-semibold tracking-tight">Need Assistance?</h2>
             <p className="text-base leading-8 text-[#5f6b73]">
               Since we have zero access to your database records, we cannot execute backups or erasures on your behalf. However, 
               if you need technical guidance on managing your iCloud CloudKit containers, exporting CSV transcripts, or have questions 
