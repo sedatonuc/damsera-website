@@ -2,7 +2,7 @@ const faqs = [
   {
     question: "What is Damsera?",
     answer:
-      "Damsera is a premium personal finance platform designed for iPhone and Mac. It helps users manage transactions, budgets, accounts, subscriptions, debts, loans, reports, cashflow and financial planning from one unified workspace.",
+      "Damsera is a premium personal finance platform designed for iPhone, iPad and Mac. It helps users manage transactions, budgets, accounts, subscriptions, debts, loans, reports, cashflow and financial planning from one unified workspace.",
   },
   {
     question: "Does Damsera work offline?",
@@ -17,7 +17,7 @@ const faqs = [
   {
     question: "Is Damsera available outside the Apple ecosystem?",
     answer:
-      "No. Damsera is intentionally focused on Apple platforms to provide a highly optimized native experience across iPhone and Mac.",
+      "No. Damsera is intentionally focused on Apple platforms to provide a highly optimized native experience across iPhone, iPad and Mac.",
   },
   {
     question: "Do all plans include every feature?",

@@ -51,7 +51,7 @@ const features = [
   {
     title: "Apple Ecosystem",
     description:
-      "Designed for iPhone and Mac with a native, premium and privacy-first experience.",
+      "Designed for iPhone, iPad and Mac with a native, premium and privacy-first experience.",
     icon: LaptopMinimal,
   },
   {

@@ -46,7 +46,7 @@ export default function Hero() {
       <p className="mt-8 max-w-2xl text-[17px] leading-8 text-[#5f6b73] mx-auto font-normal">
         Damsera helps you manage transactions, budgets, accounts, credit
         cards, subscriptions, loans, reports and your financial calendar
-        across iPhone and Mac.
+        across iPhone, iPad and Mac.
       </p>
 
       {/* Polished Call to Actions with subtle scale and shadow lift */}

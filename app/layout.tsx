@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Damsera | Premium Personal Finance App",
 
   description:
-    "Damsera is a premium personal finance app for iPhone and Mac. Manage transactions, budgets, accounts, credit cards, subscriptions, loans, reports and financial calendar planning.",
+    "Damsera is a premium personal finance app for iPhone, iPad and Mac. Manage transactions, budgets, accounts, credit cards, subscriptions, loans, reports and financial calendar planning.",
 
   keywords: [
     "Damsera",
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "money management",
     "finance app for Mac",
     "finance app for iPhone",
+    "finance app for iPad",
     "budget app",
   ],
 
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Damsera | Premium Personal Finance App",
     description:
-      "Manage your entire financial life across iPhone and Mac.",
+      "Manage your entire financial life across iPhone, iPad and Mac.",
     type: "website",
     siteName: "Damsera",
     url: "https://www.damseraapp.com",
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Damsera | Premium Personal Finance App",
     description:
-      "Manage your entire financial life across iPhone and Mac.",
+      "Manage your entire financial life across iPhone, iPad and Mac.",
     images: ["https://www.damseraapp.com/icon.png"],
   },
 };

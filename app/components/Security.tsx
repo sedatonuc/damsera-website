@@ -14,7 +14,7 @@ const securityItems = [
   {
     title: "Optional iCloud sync",
     description:
-      "Sync across iPhone and Mac when you choose to use iCloud.",
+      "Sync across iPhone, iPad and Mac when you choose to use iCloud.",
     icon: Cloud,
   },
   {

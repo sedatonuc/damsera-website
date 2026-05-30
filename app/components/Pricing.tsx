@@ -2,7 +2,7 @@ const sharedFeatures = [
   "All premium finance modules included",
   "Dashboard, transactions, budgets and reports",
   "Cashflow, calendar, subscriptions, debts and loans",
-  "iPhone and Mac access",
+  "iPhone, iPad and Mac access",
   "Local-first secure data storage",
   "Optional iCloud sync",
   "Future feature updates included",

@@ -10,6 +10,7 @@ import {
   Monitor,
   Settings2,
   Smartphone,
+  Tablet,
 } from "lucide-react";
 
 const highlights = [
@@ -286,7 +287,7 @@ export default function OverviewPage() {
               </p>
 
               <h2 className="text-4xl font-semibold tracking-[-0.04em] text-[#1f2428] sm:text-5xl">
-                Built for iPhone. Powerful on Mac.
+                Built for iPhone & iPad. Powerful on Mac.
               </h2>
 
               <p className="mt-6 max-w-xl text-lg leading-8 text-[#5f6b73]">
@@ -296,12 +297,17 @@ export default function OverviewPage() {
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-4 md:grid-cols-3 sm:grid-cols-2">
               {[
                 {
                   title: "iPhone",
                   description: "Fast daily tracking and quick financial decisions.",
                   icon: Smartphone,
+                },
+                {
+                  title: "iPad",
+                  description: "Spacious interactive canvas optimized for mobile budgeting and reports.",
+                  icon: Tablet,
                 },
                 {
                   title: "Mac",

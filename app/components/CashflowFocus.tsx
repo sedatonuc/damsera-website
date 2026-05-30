@@ -934,7 +934,7 @@ function FeatureGrid() {
     },
     {
       title: "9. Cross-Device Continuity",
-      desc: "Visual layouts scale perfectly. Tracks cash flows comfortably on small iPhone viewports as well as wide Mac workspaces.",
+      desc: "Visual layouts scale perfectly. Tracks cash flows comfortably across iPhone, iPad and Mac workspaces.",
       icon: Clock
     }
   ];

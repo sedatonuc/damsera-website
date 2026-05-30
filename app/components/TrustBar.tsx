@@ -18,7 +18,7 @@ function AppleLogo() {
 const items = [
   {
     title: "Built for Apple",
-    description: "Native experience across iPhone and Mac.",
+    description: "Native experience across iPhone, iPad and Mac.",
     icon: AppleLogo,
   },
   {

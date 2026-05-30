@@ -127,7 +127,7 @@ export default function DataRightsPage() {
                   You can purge all records instantly using these steps:
                 </p>
                 <ol className="list-decimal pl-16 text-xs space-y-2 text-[#5f6b73]">
-                  <li><strong>Device-Level Purge:</strong> On your iPhone or Mac, delete the Damsera application. This instantly deletes the local database container and all transaction caches.</li>
+                  <li><strong>Device-Level Purge:</strong> On your iPhone, iPad or Mac, delete the Damsera application. This instantly deletes the local database container and all transaction caches.</li>
                   <li><strong>iCloud Purge (if iCloud sync was active):</strong> Go to your <strong>Apple Device Settings</strong> &gt; Tap <strong>Your Name / Apple ID</strong> &gt; <strong>iCloud</strong> &gt; <strong>Manage Account Storage</strong>. Select <strong>Damsera</strong> and click <strong>Delete Documents &amp; Data</strong> to completely wipe all encrypted CloudKit backups from Apple&apos;s servers.</li>
                 </ol>
               </div>

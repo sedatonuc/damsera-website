@@ -30,6 +30,7 @@ import {
   Repeat,
   Shield,
   Smartphone,
+  Tablet,
   Target,
   WalletCards,
 } from "lucide-react";
@@ -332,6 +333,11 @@ const deviceCards = [
     icon: Smartphone,
   },
   {
+    title: "iPad",
+    description: "Spacious interactive canvas optimized for mobile budgeting and reports.",
+    icon: Tablet,
+  },
+  {
     title: "Mac",
     description: "A full workspace experience for deeper analysis and long sessions.",
     icon: Monitor,
@@ -497,7 +503,7 @@ export default async function ModulePage({
                 </h2>
               </div>
 
-              <div className="grid gap-4 md:grid-cols-2">
+              <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2">
                 {deviceCards.map((item) => {
                   const Icon = item.icon;
 
